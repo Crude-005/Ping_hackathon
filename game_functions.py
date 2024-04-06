@@ -140,8 +140,8 @@ def answer_her_questions(name):
         options = ['intelligence','astrologer', 'celebrity' , 'joke' , 'pickup_line']
         chosen = random.choice(options)
         if chosen == 'intelligence':
-            chosen = random.choice(options)
             options = ['Def','syn','ant','celeb']
+            chosen = random.choice(options)
             if chosen == 'Def':
                 lets_def(name,'1')
             elif chosen == 'syn':
