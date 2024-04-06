@@ -62,12 +62,18 @@ def lets_rhyme(name):
     print(f"System: {name} interest in you has been increased ")
 
 
-def lets_def(name):
+def lets_def(name,ans):
     
-    ans = '1'
     word = random.choice(database.words_list)
-    print(f"{name}: Can you tell me the meaning of {word}")
-    print("Enter [1] to use Define Function\n [2] to use Antonym Function\n [3] to use Synonym Function")
+
+    if ans == '1':
+        print(f"{name}: Can you tell me the meaning of {word}")
+    elif ans == '2':
+        print(f"{name}: Can you tell me what is opposite of {word}")
+    else:
+        print(f"{name}: Can you tell me what is same as {word}")
+
+    print("Enter\n [1] to use Define Function\n [2] to use Antonym Function\n [3] to use Synonym Function")
     chosen = input(": ")
     if chosen == '1':
         print(f"{database.main_character['name']}: Too easy. It means: ",api_functions.define(word))
@@ -140,7 +146,7 @@ def answer_her_questions(name):
         options = ['intelligence','astrologer', 'celebrity' , 'joke' , 'pickup_line']
         chosen = random.choice(options)
         if chosen == 'intelligence':
-            options = ['Def','syn','ant','celeb']
+            options = ['Def','syn','ant']
             chosen = random.choice(options)
             if chosen == 'Def':
                 lets_def(name,'1')
