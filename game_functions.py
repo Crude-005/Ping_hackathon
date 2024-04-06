@@ -222,7 +222,7 @@ def start_adventure():
             print(f" [{i+1}] {name}")
         chosen = get_int()
         if int(chosen) in range(1,6):
-            talk_to_girl(database.girls['list'][chosen-1])
+            talk_to_girl(database.girls['list'][int(chosen)-1])
         else:
             print("Number is out of range.Please choose a valid number")
             continue
